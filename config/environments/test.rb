@@ -1,6 +1,18 @@
 Depot::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
+  config.action_mailer.delivery_method = :smtp
+
+  config.action_mailer.smtp_settings = {
+    enable_starttls_auto: true,
+    address: "smtp.gmail.com",
+    port: 587,
+    authentication: "plain",
+    domain: "gmail.com",
+    user_name: "dufresnedavidr",
+    password: "yeti3hank"
+  }
+
   # The test environment is used exclusively to run your application's
   # test suite.  You never need to work with it otherwise.  Remember that
   # your test database is "scratch space" for the test suite and is wiped
@@ -37,3 +49,4 @@ Depot::Application.configure do
   # Print deprecation notices to the stderr
   config.active_support.deprecation = :stderr
 end
+

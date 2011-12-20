@@ -13,7 +13,7 @@ two:
   price: 9.99
 
 ruby:
-  title: Programing Ruby 1.9
+  title: Programming Ruby 1.9
   description: Ruby is the bestest.
   price: 49.50
   image_url: ruby.png

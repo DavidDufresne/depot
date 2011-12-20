@@ -1,15 +1,43 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Depot</title>
-  <%= stylesheet_link_tag    "application" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body class= '<%= controller.controller_name %>' >
+<!-- START:head -->
+  <!DOCTYPE html>
+    <html><head>
+      <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+      <!-- START_HIGHLIGHT -->
+        <title>Pragprog Books Online Store</title>
+        <!-- END_HIGHLIGHT -->
+        </head><body class="<%= controller.controller_name %>"><%= stylesheet_link_tag "application" %><!-- <label id="code.slt"/> -->
+        <%= javascript_include_tag "application" %><!-- <label id="code.jlt"/> -->
+        <%= csrf_meta_tag %><!-- <label id="code.csrf"/> -->
 
-<%= yield %>
+        <!-- END:head -->
 
-</body>
-</html>
+          <!-- START_HIGHLIGHT -->
+            <div id="banner">
+              <%= image_tag("logo.png") %>
+              <%= @page_title || "Pragmatic Bookshelf" %><!-- <label id="code.depot.e.title"/> -->
+            </div>
+            <div id="columns">
+              <div id="side">
+                <% if @cart %>
+                  <%= hidden_div_if(@cart.line_items.empty?, id: 'cart') do %>
+                  <%= render @cart %>
+                <% end %>
+              <% end %>
+              <ul>
+                <li><a href="http://www..../">Home</a></li>
+                <li><a href="http://www..../faq">Questions</a></li>
+                <li><a href="http://www..../news">News</a></li>
+                <li><a href="http://www..../contact">Contact</a></li>
+              </ul>
+            </div>
+            <div id="main">
+              <!-- END_HIGHLIGHT -->
+                <%= yield %><!-- <label id="code.depot.e.include"/> -->
+                <!-- START_HIGHLIGHT -->
+                </div>
+              </div>
+              <!-- END_HIGHLIGHT -->
+
+
+              </body></html>
 
