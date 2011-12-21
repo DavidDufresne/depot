@@ -1,6 +1,18 @@
 Depot::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
+  config.action_mailer.delivery_method = :smtp
+
+  config.action_mailer.smtp_settings = {
+    enable_starttls_auto: true,
+    address: "smtp.gmail.com",
+    port: 587,
+    authentication: "plain",
+    domain: "gmail.com",
+    user_name: "dufresnedavidr",
+    password: "yeti3hank"
+  }
+
   # Code is not reloaded between requests
   config.cache_classes = true
 
@@ -58,3 +70,4 @@ Depot::Application.configure do
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
 end
+
